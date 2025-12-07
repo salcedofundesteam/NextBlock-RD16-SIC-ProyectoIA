@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from preparing_final_data import getData
+from Services.preparing_final_data import getData
 
 app = FastAPI()
 

@@ -5,9 +5,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-CSV_INPUT_PATH = BASE_DIR / "IA" / "resultados_prediccion.csv"
-
-JSON_OUTPUT_PATH = BASE_DIR / "final_data.json"
+CSV_INPUT_PATH = BASE_DIR / ".." / "IA" / "resultados_prediccion_con_geo.csv"
+JSON_OUTPUT_PATH = BASE_DIR / ".." / "final_data.json"
 
 
 # transformar de .csv a json
