@@ -16,7 +16,7 @@ class RealEstateSmartPredictor:
         self.label_encoder = LabelEncoder()
 
         # Definimos las columnas que el modelo usará para "pensar"
-        # Usamos los datos más recientes y relevantes de tu dataset
+        # Usamos los datos más recientes y relevantes
         self.features = [
             "Growth_2023",
             "Growth_2024",
@@ -33,14 +33,14 @@ class RealEstateSmartPredictor:
         """Limpieza y preparación de datos"""
         df = df.copy()
 
-        # 1. Mapear el precio actual (usando la columna más reciente disponible en tu data)
+        # 1. Mapear el precio actual (usando la columna más reciente disponible)
         if "2025-01-31" in df.columns:
             df["Current_Price"] = df["2025-01-31"]
         else:
             df["Current_Price"] = df.iloc[:, 5]  # Fallback a alguna columna de precio
 
         # 3. Calcular métricas derivadas útiles para el modelo
-        # Relación Precio/Ingreso (si no existe, la calculamos)
+        # Relación Precio/Ingreso
         if (
             "Affordability_Ratio_2023" not in df.columns
             or df["Affordability_Ratio_2023"].isnull().all()
