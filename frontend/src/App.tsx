@@ -1,8 +1,11 @@
 import AppRouter from './routes/AppRouter';
+import { AllDataProvider } from './context/AllDataContext';
 
 function App() {
   return (
-    <AppRouter />
+    <AllDataProvider>
+      <AppRouter />
+    </AllDataProvider>
   );
 }
 
